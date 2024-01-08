@@ -1,0 +1,184 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "a title",
+      "author": "Andikan",
+      "body": "this is my first post"
+    },
+    {
+      "id": "2",
+      "title": "second title",
+      "author": "captain",
+      "body": "this is my second post"
+    },
+    {
+      "id": "3",
+      "title": "The Adventure Begins",
+      "author": "Elena Smith",
+      "body": "Embark on a journey filled with excitement and discovery."
+    },
+    {
+      "id": "4",
+      "title": "Unraveling Mysteries",
+      "author": "Maxwell Jacobs",
+      "body": "Delve into the unknown and uncover the secrets hidden in plain sight."
+    },
+    {
+      "id": "5",
+      "title": "Echoes of Silence",
+      "author": "Sophia Miller",
+      "body": "In the quiet, find the strength to listen to the whispers of your soul."
+    },
+    {
+      "id": "6",
+      "title": "The Art of Innovation",
+      "author": "Gabriel Chen",
+      "body": "Discover how creativity and imagination shape the world of tomorrow."
+    },
+    {
+      "id": "7",
+      "title": "Dancing with Words",
+      "author": "Isabella Thompson",
+      "body": "Explore the rhythm and cadence within the pages of literature."
+    },
+    {
+      "id": "8",
+      "title": "Beyond the Horizon",
+      "author": "Xavier Nguyen",
+      "body": "Venture into the unknown and embrace the endless possibilities ahead."
+    },
+    {
+      "id": "9",
+      "title": "Serenity Found",
+      "author": "Olivia Garcia",
+      "body": "Amid chaos, discover the tranquility that resides within."
+    },
+    {
+      "id": "10",
+      "title": "Eternal Wanderlust",
+      "author": "Sebastian Patel",
+      "body": "Journeying through lands unknown, seeking the stories untold."
+    },
+    {
+      "id": "11",
+      "title": "Whispers of the Forest",
+      "author": "Luna Carter",
+      "body": "Listen closely to the secrets carried by the ancient trees."
+    },
+    {
+      "id": "12",
+      "title": "Canvas of Dreams",
+      "author": "Julian Ramirez",
+      "body": "Paint your aspirations on the vast canvas of existence."
+    },
+    {
+      "id": "13",
+      "title": "Harmony Amid Chaos",
+      "author": "Aria Johnson",
+      "body": "Discover the symphony that arises amidst life's tumultuous melody."
+    },
+    {
+      "id": "14",
+      "title": "Melodies in Motion",
+      "author": "Mateo Fernandez",
+      "body": "Explore the dance of notes that breathe life into silence."
+    },
+    {
+      "id": "15",
+      "title": "Bridges of Connection",
+      "author": "Hannah Evans",
+      "body": "Building bonds that transcend the boundaries of time and distance."
+    },
+    {
+      "id": "16",
+      "title": "Echoes of Imagination",
+      "author": "Natalie Baker",
+      "body": "Where reverberating thoughts shape the realms of possibility."
+    },
+    {
+      "id": "17",
+      "title": "Chronicles of Wonder",
+      "author": "Elijah Cooper",
+      "body": "Unveiling the enchantment hidden within everyday tales."
+    },
+    {
+      "id": "18",
+      "title": "Infinite Horizons",
+      "author": "Amelia Roberts",
+      "body": "The vast expanse beckons, inviting exploration without end."
+    },
+    {
+      "id": "19",
+      "title": "The Alchemy of Words",
+      "author": "Simon Ward",
+      "body": "Transforming thoughts into gold through the power of language."
+    },
+    {
+      "id": "20",
+      "title": "Whispers of Destiny",
+      "author": "Liam Stewart",
+      "body": "Following the faint echoes that guide us toward our destined paths."
+    },
+    {
+      "id": "21",
+      "title": "Tranquil Reflections",
+      "author": "Eva Phillips",
+      "body": "Amidst the ripples, find serenity in the mirror of existence."
+    },
+    {
+      "id": "22",
+      "title": "Mystical Reveries",
+      "author": "Lucas Morgan",
+      "body": "Exploring the ethereal realms that linger beyond perception."
+    },
+    {
+      "id": "23",
+      "title": "Embers of Passion",
+      "author": "Aurora Lee",
+      "body": "Igniting the flames of fervor that illuminate life's path."
+    },
+    {
+      "id": "24",
+      "title": "Whispers in the Wind",
+      "author": "Nora King",
+      "body": "Capturing the fleeting murmurs carried by the gentle breeze."
+    },
+    {
+      "id": "25",
+      "title": "Waves of Enlightenment",
+      "author": "Theo Foster",
+      "body": "Riding the tides of wisdom that ebb and flow through existence."
+    },
+    {
+      "id": "26",
+      "title": "Fragments of Eternity",
+      "author": "Harper Lewis",
+      "body": "Collecting timeless shards that shape the mosaic of forever."
+    },
+    {
+      "id": "27",
+      "title": "Constellations of Inspiration",
+      "author": "Mila Adams",
+      "body": "Mapping the celestial paths that guide creative fervor."
+    },
+    {
+      "id": "28",
+      "title": "Journeys Beyond",
+      "author": "Caleb Price",
+      "body": "Venturing into realms uncharted, seeking tales yet untold."
+    },
+    {
+      "id": "29",
+      "title": "Pilgrimage of Purpose",
+      "author": "Violet Carter",
+      "body": "Traversing the roads that lead to the essence of our being."
+    },
+    {
+      "id": "30",
+      "title": "Stardust Whispers",
+      "author": "Felix Turner",
+      "body": "Listening to the cosmic secrets carried by celestial particles."
+    }
+  ]
+}
