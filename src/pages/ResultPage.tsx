@@ -1,14 +1,15 @@
 import {useEffect, useState} from "react";
 import searchIcon from '../assets/search.svg'
-interface responseData {
+import {Link} from "react-router-dom";
+interface IArticle {
     id: string,
     title: string,
     author: string,
     body: string,
 }
 export default function ResultPage() {
-    const [data, setData] = useState<Array<responseData>>([]);
-    const [filtered, setFiltered] = useState<Array<responseData>>([]);
+    const [data, setData] = useState<Array<IArticle>>([]);
+    const [filtered, setFiltered] = useState<Array<IArticle>>([]);
     const [searchValue, setSearchValue] = useState<string>("")
     useEffect(() => {
         fetch(
@@ -16,7 +17,7 @@ export default function ResultPage() {
             "https://my-json-server.typicode.com/AndikanAffiah/json-server/articles"
         )
             .then((response) => response.json())
-            .then((json: Array<responseData>) => {
+            .then((json: Array<IArticle>) => {
                 setData(json)
                 setFiltered(json)
             });
@@ -28,7 +29,7 @@ export default function ResultPage() {
 
     function handleSearch(){
         const value:string = searchValue.toLowerCase()
-        setFiltered(data.filter((item:responseData) => {
+        setFiltered(data.filter((item:IArticle) => {
             if(item.title.toLowerCase().includes(value) || item.author.toLowerCase().includes(value)){
                 return item
             }
@@ -49,15 +50,21 @@ export default function ResultPage() {
                         <img src={searchIcon} alt={""} width={40} onClick={handleSearch}/>
                     </div>
                 </div>
-                <div></div>
+                <div>
+                    <Link to={"/create/new"}>
+                        <button className={"border border-black px-6 py-4 rounded-xl hover:text-white hover:bg-black transition-all duration-300"}>
+                            Create Article
+                        </button>
+                    </Link>
+                </div>
 
             </div>
             <div className={"relative px-16"}>
                 <div className={"text-5xl my-6 bg-white py-6 sticky top-36"}>Results:</div>
                 {
-                    filtered.map((item: responseData, index: number) => {
+                    filtered.map((item: IArticle, index: number) => {
                         return (
-                            <div key={index} className={"border-2 border-gray-300 rounded-xl p-4 mb-4"}>
+                            <div key={index} className={"border-2 border-gray-300 hover:bg-gray-300/30 hover:cursor-pointer rounded-xl p-4 mb-4"}>
                                 <div className={"text-2xl font-medium capitalize mb-1"}>
                                     Title: {item.title}
                                 </div>
