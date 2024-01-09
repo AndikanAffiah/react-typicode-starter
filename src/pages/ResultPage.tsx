@@ -52,7 +52,7 @@ export default function ResultPage() {
                         onChange={(e) => setSearchValue(e.target.value)}
                         value={searchValue}
                         type={"search"}
-                        placeholder={"Search aritcle by name or author "}
+                        placeholder={"Search article by name or author "}
                         className={"border-2 border-gray-500 rounded-2xl p-4 text-xl w-[500px]"}
                     />
                     <div className={"cursor-pointer -ml-12"}>
