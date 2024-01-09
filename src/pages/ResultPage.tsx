@@ -37,26 +37,30 @@ export default function ResultPage() {
     }
     return (
         <div className={"relative"}>
-            <div className={"sticky top-0 bg-emerald-100 py-10 flex justify-center items-center gap-6 z-20"}>
-                <div className={"flex justify-center items-center"}>
+            <div
+                className={"sticky top-0 bg-emerald-100 py-10 px-16 flex flex-col md:flex-row items-center gap-6 z-20"}>
+                <div>
+                    <Link to={"/create/new"}>
+                        <button
+                            className={"border border-black px-6 py-4 rounded-xl hover:text-white hover:bg-black transition-all duration-300"}>
+                            Upload Article
+                        </button>
+                    </Link>
+                </div>
+                <div className={"flex justify-center items-center grow"}>
                     <input
                         onChange={(e) => setSearchValue(e.target.value)}
                         value={searchValue}
                         type={"search"}
-                        placeholder={"Search by author name or title "}
+                        placeholder={"Search aritcle by name or author "}
                         className={"border-2 border-gray-500 rounded-2xl p-4 text-xl w-[500px]"}
                     />
                     <div className={"cursor-pointer -ml-12"}>
-                        <img src={searchIcon} alt={""} width={40} onClick={handleSearch} className={"transition-all hover:animate-[wiggle_1s_ease-in-out_infinite]"}/>
+                        <img src={searchIcon} alt={""} width={40} onClick={handleSearch}
+                             className={"transition-all hover:animate-[wiggle_1s_ease-in-out_infinite]"}/>
                     </div>
                 </div>
-                <div>
-                    <Link to={"/create/new"}>
-                        <button className={"border border-black px-6 py-4 rounded-xl hover:text-white hover:bg-black transition-all duration-300"}>
-                            Create Article
-                        </button>
-                    </Link>
-                </div>
+
 
             </div>
             <div className={"relative px-16"}>
@@ -64,7 +68,8 @@ export default function ResultPage() {
                 {
                     filtered.map((item: IArticle, index: number) => {
                         return (
-                            <div key={index} className={"border-2 border-gray-300 hover:bg-gray-300/30 hover:cursor-pointer rounded-xl p-4 mb-4"}>
+                            <div key={index}
+                                 className={"border-2 border-gray-300 hover:bg-gray-300/30 hover:cursor-pointer rounded-xl p-4 mb-4"}>
                                 <div className={"text-2xl font-medium capitalize mb-1"}>
                                     Title: {item.title}
                                 </div>
