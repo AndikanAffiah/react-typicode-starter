@@ -47,7 +47,7 @@ export default function ResultPage() {
                         className={"border-2 border-gray-500 rounded-2xl p-4 text-xl w-[500px]"}
                     />
                     <div className={"cursor-pointer -ml-12"}>
-                        <img src={searchIcon} alt={""} width={40} onClick={handleSearch}/>
+                        <img src={searchIcon} alt={""} width={40} onClick={handleSearch} className={"transition-all hover:animate-[wiggle_1s_ease-in-out_infinite]"}/>
                     </div>
                 </div>
                 <div>
