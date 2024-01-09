@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import {useState} from "react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, {Toaster} from 'react-hot-toast';
+
 interface IArticleFormData {
     name: string,
     email: string,
@@ -35,9 +36,10 @@ export default function CreateArticle(){
         let validated: boolean = true;
 
         for (const [key, value] of Object.entries(state)) {
-            const err = `${key} must not be empty`;
 
             if(!value){
+                const err = `${key} must not be empty`;
+
                 if(key == "name"){
                     valid[key] = err
                 }else if(key == "email"){
@@ -48,6 +50,12 @@ export default function CreateArticle(){
                     valid[key] = err
                 }
                 validated = false
+            }else{
+                if(key == "email" && !/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(value)){
+                    valid[key] = `${key} must be a valid email`
+                }else if(key == "body" && value.length < 10){
+                    valid[key] = `${key} must be at least 10 characters`
+                }
             }
         }
         setStateError({...stateError, ...valid})
