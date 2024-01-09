@@ -37,28 +37,32 @@ export default function ResultPage() {
     return (
         <div className={"relative"}>
             <div className={"sticky top-0 bg-emerald-100 py-10 flex justify-center items-center gap-6 z-20"}>
-                <input
-                    onChange={(e)=>setSearchValue(e.target.value)}
-                    value={searchValue}
-                    type={"search"}
-                    placeholder={"Search by author name or title "}
-                    className={"border-2 border-gray-500 rounded-2xl p-4 text-xl w-[400px]"}
-                />
-                <div className={"cursor-pointer"}>
-                    <img src={searchIcon} alt={""} width={40} onClick={handleSearch}/>
+                <div className={"flex justify-center items-center"}>
+                    <input
+                        onChange={(e) => setSearchValue(e.target.value)}
+                        value={searchValue}
+                        type={"search"}
+                        placeholder={"Search by author name or title "}
+                        className={"border-2 border-gray-500 rounded-2xl p-4 text-xl w-[500px]"}
+                    />
+                    <div className={"cursor-pointer -ml-12"}>
+                        <img src={searchIcon} alt={""} width={40} onClick={handleSearch}/>
+                    </div>
                 </div>
+                <div></div>
+
             </div>
             <div className={"relative px-16"}>
                 <div className={"text-5xl my-6 bg-white py-6 sticky top-36"}>Results:</div>
                 {
-                    filtered.map((item:responseData,index:number) => {
+                    filtered.map((item: responseData, index: number) => {
                         return (
                             <div key={index} className={"border-2 border-gray-300 rounded-xl p-4 mb-4"}>
                                 <div className={"text-2xl font-medium capitalize mb-1"}>
                                     Title: {item.title}
                                 </div>
                                 <div> { item.body }</div>
-                                <div className={"text-sm"}>{item.author}</div>
+                                <div className={"text-sm text-gray-500"}>{item.author}</div>
                             </div>
                         )
                     })
