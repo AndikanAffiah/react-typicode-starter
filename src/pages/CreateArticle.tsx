@@ -25,21 +25,32 @@ export default function CreateArticle(){
 
 
     function handleSubmit(){
+        const valid:IArticleFormData = {
+            name: "",
+            email: "",
+            title: "",
+            body: "",
+        }
 
         let validated: boolean = true;
 
         for (const [key, value] of Object.entries(state)) {
+            const err = `${key} must not be empty`;
+
             if(!value){
                 if(key == "name"){
-                    setStateError({...stateError, name:"Name must not be empty"})
-                    validated = false
+                    valid[key] = err
+                }else if(key == "email"){
+                    valid[key] = err
+                }else if(key == "title"){
+                    valid[key] = err
+                }else if(key == "body"){
+                    valid[key] = err
                 }
-
-                // validated = false
-                // break
+                validated = false
             }
-            console.log(`${key}: ${value}`);
         }
+        setStateError({...stateError, ...valid})
 
         if(!validated){
             return
@@ -57,6 +68,7 @@ export default function CreateArticle(){
         .then((json) => {
             setLoadingState(false)
             toast.success('Article created successfully');
+            // you can store in local storage
             return json
         });
     }
@@ -86,6 +98,11 @@ export default function CreateArticle(){
                             }}
                                    placeholder={"Author Name"}
                                    className={"border-2 border-gray-400 min-w-96 p-4 rounded-lg"}/>
+                            {
+                                stateError.name
+                                    ? (<div className={"text-red-400 text-sm capitalize"}>{stateError.name}</div>)
+                                    : ""
+                            }
                         </div>
                         <div className={"my-4"}>
                             <input onChange={(e) => {
@@ -96,6 +113,11 @@ export default function CreateArticle(){
                             }}
                                    placeholder={"Author Email"}
                                    className={"border-2 border-gray-400 min-w-96 p-4 rounded-lg"} type={"email"}/>
+                            {
+                                stateError.email
+                                    ? (<div className={"text-red-400 text-sm capitalize"}>{stateError.email}</div>)
+                                    : ""
+                            }
                         </div>
                         <div className={"my-4"}>
                             <input onChange={(e) => {
@@ -108,7 +130,7 @@ export default function CreateArticle(){
                                    className={"border-2 border-gray-400 min-w-96 p-4 rounded-lg"}/>
                             {
                                 stateError.title
-                                    ? (<div>{stateError.title}</div>)
+                                    ? (<div className={"text-red-400 text-sm capitalize"}>{stateError.title}</div>)
                                     : ""
                             }
                         </div>
@@ -123,7 +145,7 @@ export default function CreateArticle(){
                                       className={"border-2 border-gray-400 min-w-96 p-4 rounded-lg"}/>
                             {
                                 stateError.body
-                                    ? (<div>{stateError.body}</div>)
+                                    ? (<div className={"text-red-400 text-sm capitalize"}>{stateError.body}</div>)
                                     : ""
                             }
                         </div>
