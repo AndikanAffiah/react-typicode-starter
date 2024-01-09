@@ -9,14 +9,42 @@ interface IArticleFormData {
 }
 export default function CreateArticle(){
 
-    const [state, setState] = useState<IArticleFormData>({});
+    const [state, setState] = useState<IArticleFormData>({
+        name: "",
+        email: "",
+        title: "",
+        body: "",
+    });
+    const [stateError, setStateError] = useState<IArticleFormData>({
+        name: "",
+        email: "",
+        title: "",
+        body: "",
+    });
     const [loadingState, setLoadingState] = useState(false);
 
-    // function handleChange(e: InputEvent){
-    //     setState((prev)=>{...})
-    // }
+
     function handleSubmit(){
-        //after validation
+
+        let validated: boolean = true;
+
+        for (const [key, value] of Object.entries(state)) {
+            if(!value){
+                if(key == "name"){
+                    setStateError({...stateError, name:"Name must not be empty"})
+                    validated = false
+                }
+
+                // validated = false
+                // break
+            }
+            console.log(`${key}: ${value}`);
+        }
+
+        if(!validated){
+            return
+        }
+
         setLoadingState(true)
         const completedFetch = fetch(
             "https://my-json-server.typicode.com/AndikanAffiah/json-server/create",
@@ -50,24 +78,54 @@ export default function CreateArticle(){
                 <div className={"flex justify-center "}>
                     <div className={"border-2 border-gray-800 p-6 rounded-2xl"}>
                         <div className={"my-4"}>
-                            <input onChange={(e) => setState({...state, name: e.target.value})}
+                            <input onChange={(e) => {
+                                if(stateError.name){
+                                    setStateError({...stateError, name: ""})
+                                }
+                                setState({...state, name: e.target.value})
+                            }}
                                    placeholder={"Author Name"}
                                    className={"border-2 border-gray-400 min-w-96 p-4 rounded-lg"}/>
                         </div>
                         <div className={"my-4"}>
-                            <input onChange={(e) => setState({...state, email: e.target.value})}
+                            <input onChange={(e) => {
+                                if(stateError.email){
+                                    setStateError({...stateError, email: ""})
+                                }
+                                setState({...state, email: e.target.value})
+                            }}
                                    placeholder={"Author Email"}
                                    className={"border-2 border-gray-400 min-w-96 p-4 rounded-lg"} type={"email"}/>
                         </div>
                         <div className={"my-4"}>
-                            <input onChange={(e) => setState({...state, title: e.target.value})}
+                            <input onChange={(e) => {
+                                if(stateError.title){
+                                    setStateError({...stateError, title: ""})
+                                }
+                                setState({...state, title: e.target.value})
+                            }}
                                    placeholder={"Title"}
                                    className={"border-2 border-gray-400 min-w-96 p-4 rounded-lg"}/>
+                            {
+                                stateError.title
+                                    ? (<div>{stateError.title}</div>)
+                                    : ""
+                            }
                         </div>
                         <div className={"my-4"}>
-                            <textarea onChange={(e) => setState({...state, body: e.target.value})} rows={5}
+                            <textarea onChange={(e) => {
+                                if(stateError.body){
+                                    setStateError({...stateError, body: ""})
+                                }
+                                setState({...state, body: e.target.value})
+                            }} rows={5}
                                       placeholder={"Write content here"}
                                       className={"border-2 border-gray-400 min-w-96 p-4 rounded-lg"}/>
+                            {
+                                stateError.body
+                                    ? (<div>{stateError.body}</div>)
+                                    : ""
+                            }
                         </div>
                         <div className={"my-4 min-w-96 flex justify-end"}>
                             <button onClick={handleSubmit}
