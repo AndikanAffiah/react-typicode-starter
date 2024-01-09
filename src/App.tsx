@@ -3,8 +3,8 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import ResultPage from "./pages/resultPage";
 import './App.css';
+import ResultPage from "./pages/ResultPage.tsx";
 
 function App() {
     return (
